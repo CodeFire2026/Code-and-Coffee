@@ -1,3 +1,8 @@
 .idea/
 venv/
 __pycache__/
+build/
+dist/
+nbproject/private/
+*.class
+*.jar
