@@ -6,3 +6,6 @@ dist/
 nbproject/private/
 *.class
 *.jar
+/Java/leccion2/EjercicioCiclos01/nbproject/private/
+/Java/leccion2/EjercicioCiclos02/nbproject/private/
+/Java/leccion3/LeccionClasesObjetos/nbproject/private/
