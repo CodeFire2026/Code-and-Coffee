@@ -208,19 +208,83 @@ print(4 in tuple) # Boolean action, its answer will be a boolean type
 # What we can use inside a tuple are: index, count, len
 # In tuples you can turn a tuple into a list and a list into a tuple
 
+# Set type review
+# How to define a set
+set1 = set() # It´s empty
+set2 = {"Bye"}
+set1.add(67)
+set2.add("Hi")
+print(set1)
+set1.add("Hi")
+print(set2)
+print(3 not in set2) # We ask if number 3 is NOT in set2
 
+# How to make the equality of two sets
+print(set2 == set1) # It shows a boolean as an answer
 
+# Set operations
+set3 = set1 | set2 # The line merge both sets
+print(set3)
 
+# Set elements in common
+set3 = set1 & set2 # Which elements are there in common
+print(set3)
 
+set3= set1 - set2 # Assigns the value that is in set1 but not in set2
+print(set3)
 
+set3 = set2 - set1
+print(set3)
 
+set3 = set1 ^ set2 #Elements that don't share or are different from each other
+print(set3)
 
+set3 = set1 | set2
+print(set1.issubset(set3)) # We ask if a set is a subset of other
+print(set1.issubset(set3))
+print(set3.issubset(set1))
+print(set3.issubset(set2))
 
+print(set3.issuperset(set1)) # We ask if set1 elements are inside set3
+print(set3.issuperset(set2)) # If it's true, it means set3 is a superset
+print(set2.issuperset(set3))
 
+# How to know if both sets are disjointed, this means they share NO elements between them
+print(set1.isdisjoint(set2)) # There are NO things in common
 
+# Turn a set into unchangeable
+set1 = frozenset # This makes the set be totally unchangeable
+# We can't aggregate, modify or eliminate elemnts inside the set
 
+# Dictionary Review
+newDictionary = {"Blue" : "Azul", "Red" : "Rojo", "Green" : "Verde", "Yellow" : "Amarillo"}
+print(newDictionary)
 
+# How to eliminate
+del (newDictionary["Red"]) # You can delete keys, but never values associated to those keys.
+print(newDictionary)
 
+# Dictionaries can store different type of data
+dictionary2 = {"Santu":{"Age":40,"Height":1.83}, "Osvaldo":[45,1.85],"Natalia":[35,1.67]}
+print(dictionary2)
+
+argentinaNationalTeam = {
+    10: {"Name": "Lionel Messi", "Age": 35, "Height": 1.70, "Price": "50M", "Position": "Right Winger"},
+    20: {"Name": "Nicolás Paz", "Age": 21, "Height": 1.75, "Price": "70M", "Position": "Attacking Midfielder"},
+    8: {"Name": "Alexis Mac Allister", "Age": 27, "Height": 1.74, "Price": "70M", "Position": "Central Midfielder"},
+    9: {"Name": "Julián Álvarez", "Age": 26, "Height": 1.70, "Price": "90M", "Position": "Striker"},
+    24: {"Name": "Enzo Fernández", "Age": 25, "Height": 1.78, "Price": "65M", "Position": "Central Midfielder"},
+    13: {"Name": "Cristian Romero", "Age": 28, "Height": 1.85, "Price": "60M", "Position": "Centre-Back"},
+    17: {"Name": "Nicolás González", "Age": 28, "Height": 1.80, "Price": "30M", "Position": "Left Winger"},
+    22: {"Name": "Lautaro Martínez", "Age": 28, "Height": 1.74, "Price": "80M", "Position": "Striker"},
+    11: {"Name": "Giuliano Simeone", "Age": 23, "Height": 1.79, "Price": "35M", "Position": "Right Winger"},
+    5: {"Name": "Leandro Paredes", "Age": 32, "Height": 1.80, "Price": "8M", "Position": "Defensive Midfielder"}
+}
+for key, value in argentinaNationalTeam.items():
+    print(key, value)
+
+print("The amount of players we´ve got uploaded into the dictionary is: ", end="")
+print(len(argentinaNationalTeam))
 
 
 
