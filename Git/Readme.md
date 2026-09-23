@@ -169,3 +169,75 @@ Para invitar a un colaborador debemos ir a GitHub y seleccionar:
 setting -> colaborators -> ingresar contraseña o un F2A de verificación y enviar la invitación escribiendo el nombre de usuario.
 
 Del otro lado el usuario invitado solo debe aceptar y listo, ya puede participar del proyecto haciendo commit.
+
+# CLASE 05 MIÉRCOLES 9 DE SEPTIEMBRE DEL 2026 - Portafolio 4
+## Git tag y versiones en GitHub
+
+> En Git, las etiquetas o Git tags tienen un papel importante al asignar versiones a los commits más significativos de un proyecto. Aprender a utilizar el comando git tag, entender los diferentes tipos de etiquetas, cómo crearlas, eliminarlas y compartirlas, es esencial para un flujo de trabajo eficiente.<br>
+
+Creación de etiquetas en Git
+
+```sh
+git tag
+
+```
+
+> Sustituye con un identificador semántico que refleje el estado del repositorio en el momento de la creación. Git admite etiquetas anotadas y ligeras.
+Listado de etiquetas
+Para obtener una lista de etiquetas en el repositorio, ejecuta el siguiente comando:<br>
+Para crear una etiqueta, ejecuta el siguiente comando:<br>
+
+>Las etiquetas anotadas almacenan información adicional como la fecha, etiquetador y correo electrónico, y son ideales para publicaciones públicas. Las etiquetas ligeras son más simples y se emplean como “marcadores” de una confirmación específica.
+
+```sh
+git tag
+
+Esto mostrará una lista de las etiquetas existentes, como:
+
+v1.0
+
+v1.1
+
+v1.2
+
+Para perfeccionar la lista, puedes utilizar opciones adicionales, como -l con una expresión comodín.
+
+Uso compartido de etiquetas
+
+Compartir etiquetas requiere un enfoque explícito al usar el comando git push. Por defecto, las etiquetas no se envían automáticamente. Para enviar etiquetas específicas, utiliza:
+
+git push origin
+
+Para enviar varias etiquetas a la vez, usa:
+
+git push origin --tags
+
+Eliminación de etiquetas
+Para eliminar una etiqueta, usa el siguiente comando:
+
+git tag -d
+```
+
+>Esto eliminará la etiqueta identificada por en el repositorio local.
+
+>En resumen, las etiquetas en Git son esenciales para asignar versiones y capturar instantáneas importantes en el historial de un proyecto. Aprender a crear, listar, compartir y eliminar etiquetas mejorará tu flujo de trabajo con Git.
+
+# CLASE 06 MIÉRCOLES 16 DE SEPTIEMBRE DEL 2026 - Portafolio 5
+## Error con los tags
+
+> Error con los tags
+Investigación: ¿Qué pasa si por error cargamos un tag con el mismo nombre dos veces?
+¿Cómo solucionarías este problema o error?
+
+Si por error cargamos un tag con el mismo nombre dos veces, Git nos mostrará un error porque no puede existir otro tag con exactamente el mismo nombre.
+Para solucionar este problema, primero podemos verificar los tags existentes con:
+```sh
+git tag
+```
+>Si queremos reemplazar el tag existente por otro, podemos eliminar el tag anterior con:
+```sh
+git tag -d NombreDelTag
+Y luego crear nuevamente el tag con el mismo nombre:
+git tag NombreDelTag
+```
+
