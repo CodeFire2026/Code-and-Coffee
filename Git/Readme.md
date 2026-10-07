@@ -1,10 +1,13 @@
 # CLASE 01 MIÉRCOLES 12 DE AGOSTO DEL 2026 - Portafolio 1
-
 ## USO DE GITHUB
 
+
+### ❓ ¿Qué es GitHub?
  GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como servidores remotos y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos).
 
  Luego de crear nuestra cuenta, podemos crear o importar repositorios, crear organizaciones y proyectos de trabajo, descubrir repositorios de otras personas, contribuir a esos proyectos, dar estrellas y muchas otras cosas.
+
+> 📌 **IMPORTANTE:** Un repositorio puede tener una versión local en nuestra computadora y una versión remota en GitHub. Ambas pueden sincronizarse utilizando comandos de Git.
 
 ## COMANDOS
 
@@ -41,11 +44,28 @@ git clone git@github.com:CodeFire2026/Code-and-Coffee.git
 cd Code-and-Coffee
 git pull origin main
 git fetch
-git banch #Veran que está la rama main por defecto
+git branch #Veran que está la rama main por defecto
 touch README.md #Creamos el readme.md
 git status
 git push origin main
 ```
+| 📚 **¿QUÉ HACE CADA COMANDO?** |
+|---|
+| `cd` → permite cambiar de carpeta. |
+| `mkdir` → crea una nueva carpeta. |
+| `git clone` → descarga un repositorio desde GitHub. |
+| `git pull` → trae los cambios del repositorio remoto al repositorio local. |
+| `git fetch` → obtiene información actualizada del repositorio remoto. |
+| `git branch` → muestra o permite administrar las ramas. |
+| `touch` → crea un archivo nuevo. |
+| `git status` → muestra el estado actual del repositorio. |
+| `git push` → envía los cambios del repositorio local a GitHub. |
+
+
+| 🔄 **FLUJO BÁSICO DE TRABAJO** |
+|---|
+| **GitHub → `git clone` → Repositorio local → hacemos cambios → `git status` → `git push` → GitHub** |
+
 
 # CLASE 02 MIÉRCOLES 19 DE AGOSTO DEL 2026 - Portafolio 2
 
@@ -56,6 +76,12 @@ Para copiar la llave publica debes ir al archivo .ssh y allí encontrarás el ar
 Copiar la llave publica #Ir a GitHub, vamos a setting, vamos a SSH and GPG keys
 
 Crear una nueva #New SSH key poner nombre y pegar la ssh publica, con esto esta listo.
+
+| 🔐 **¿PARA QUÉ SIRVE LA LLAVE SSH?** |
+|---|
+| La llave SSH permite que nuestra computadora se identifique de forma segura ante GitHub. |
+| Una vez configurada, podemos conectarnos con GitHub sin tener que ingresar nuestro usuario y contraseña cada vez que hacemos operaciones con el repositorio. |
+| **Importante:** cada computadora o dispositivo nuevo que queramos utilizar debe tener su propia llave SSH configurada. |
 
 > Aconsejo que la ssh tenga el nombre del ordenador en el que estas trabajando. Esto se debe hacer con cada pc nueva o dispositivo nuevo que tengamos para acceder a nuestra cuenta de GitHub.
 
@@ -76,13 +102,27 @@ git commit -am "Uso de GitHub parte 20" #Hacemos el commit de hoy
 
 git push origin main #Pasamos todo lo hecho a GitHub, revisar en el repositorio en GitHub.
 ```
+
+| 📚 **¿QUÉ HACE CADA COMANDO?** |
+|---|
+| `git branch` → muestra las ramas disponibles y señala en cuál estamos trabajando. |
+| `git checkout master` → cambia a la rama `master`. |
+| `git branch -M main` → cambia el nombre de la rama actual a `main`. |
+| `git remote add origin URL` → conecta nuestro repositorio local con un repositorio remoto. |
+| `git remote -v` → muestra los repositorios remotos que tenemos conectados. |
+| `git merge segunda` → incorpora los cambios de la rama `segunda` en la rama en la que estamos trabajando. |
+| `git commit -am "mensaje"` → crea un commit con los cambios realizados en archivos que Git ya está siguiendo. |
+| `git push origin main` → envía los cambios de la rama `main` al repositorio remoto. |
+
 Frente al cambio de nombre de rama master a main, suele suceder que en el repo de GitHub se hayan creado dos ramas, la rama master y la rama main, se debe ir al repo, settings y ahí se puede cambiar la rama principal, en vez de que siga siendo master, que sea la rama main, luego de eso ya podemos borrar la rama master.
 
+| 💡 **MASTER Y MAIN** |
+|---|
+| `master` y `main` son nombres que pueden utilizarse para la rama principal. Actualmente es muy común utilizar `main`. |
+| Cambiar el nombre de `master` a `main` **no crea un proyecto nuevo**, solamente cambia el nombre de la rama. |
 
 
 # CLASE 03 MIÉRCOLES 26 DE AGOSTO DEL 2026 - Portafolio 3
-
-
 ## Cambios en GitHub: de master a main
 
 El escritor Argentino Julio Cortázar afirma que las palabras tienen color y peso. Por otro lado, los sinónimos existen por definición, pero no expresan lo mismo. Feo no es lo mismo que desagradable, ni aromático es lo mismo que oloroso.
@@ -106,9 +146,20 @@ Cuando se crea un repositorio desde git bash en nuestro ordenador a través de g
 
 > git branch -M main
 
+| 💡 **¿QUÉ HACE `git branch -M main`?** |
+|---|
+| Cambia el nombre de la rama actual de `master` a `main`. |
+| La opción `-M` permite realizar el cambio de nombre incluso si ya existe una rama llamada `main`. |
+| Este comando **no elimina los archivos ni los commits**, solamente cambia el nombre de la rama. |
+
 O cambiando la asignación por default con este otro comando:
 
 > git config --global init.defaultBranch main
+
+| ⚙️ **CONFIGURAR `main` COMO RAMA PREDETERMINADA** |
+|---|
+| `git config --global init.defaultBranch main` configura Git para que, cuando creemos un repositorio nuevo utilizando `git init`, la rama inicial sea `main` en lugar de `master`. |
+| Al utilizar `--global`, esta configuración se aplica a los nuevos repositorios que creemos en nuestra computadora. |
 
 A partir de este comando siempre que ingreses git init será la rama main.
 
@@ -126,7 +177,20 @@ Para instalar gitk debemos ejecutar los siguientes comandos:
 
 * sudo apt-get install gitk
 
+| 📚 **¿QUÉ HACE CADA COMANDO?** |
+|---|
+| `sudo apt-get update` → actualiza la información de los paquetes disponibles. |
+| `sudo apt-get install gitk` → instala la herramienta `gitk`. |
+| `gitk` → abre la interfaz gráfica para visualizar el historial del repositorio. |
+
 Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git utilizando el comando gitk. Gitk fue el primer visor gráfico que se desarrolló para ver de manera gráfica el historial de un repositorio de Git.
+
+| 🧠 **PARA RECORDAR** |
+|---|
+| `master` y `main` pueden ser nombres de la rama principal, pero actualmente `main` es el nombre más utilizado. |
+| `git branch -M main` → cambia `master` a `main`. |
+| `git config --global init.defaultBranch main` → hace que los nuevos `git init` comiencen directamente en `main`. |
+| `gitk` → permite visualizar gráficamente el historial de Git. |
 
 # CLASE 04 MIÉRCOLES 2 DE SEPTIEMBRE DEL 2026 - Portafolio 4
 
@@ -138,6 +202,11 @@ Luego de crear nuestras llaves SSH podemos entregarle la llave pública a GitHub
 Para esto debes entrar a la Configuración de Llaves SSH en GitHub, crear una nueva llave con el nombre que le quieras dar y el contenido de la llave pública de tu computadora.
 
 Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH:
+
+| 💡 **IMPORTANTE SOBRE LA LLAVE SSH** |
+|---|
+| La llave que debemos agregar a GitHub es la **llave pública**, normalmente la que termina en `.pub`. |
+| **Nunca debemos compartir nuestra llave privada**, ya que es la que permite autenticarnos desde nuestra computadora. |
 
 ## ssh
 ```sh
@@ -159,7 +228,13 @@ Linux (Ubuntu):
 cat ~/.ssh/id_rsa.pub
 ```
 
->Importante
+| ⚠️ **IMPORTANTE ANTES DE HACER UN PUSH** |
+|---|
+| Las buenas costumbres nos enseñan que antes de hacer un `push`, siempre debemos hacer un `pull` o un `fetch`, para comprobar si alguien ya realizó algún cambio y evitar posibles conflictos. |
+|
+| `git fetch` → obtiene información nueva del repositorio remoto, pero no modifica nuestros archivos de trabajo. |
+| `git pull` → obtiene los cambios del repositorio remoto y los integra en nuestra rama local. |
+| `git push` → envía nuestros commits desde el repositorio local hacia GitHub. |
 
 Las buenas costumbres nos enseñan que antes de hacer un push, siempre debemos hacer un pull, un fetch, esto para que si alguien ya hizo algún cambio, no se genere un conflicto.
 
@@ -175,12 +250,32 @@ Del otro lado el usuario invitado solo debe aceptar y listo, ya puede participar
 
 > En Git, las etiquetas o Git tags tienen un papel importante al asignar versiones a los commits más significativos de un proyecto. Aprender a utilizar el comando git tag, entender los diferentes tipos de etiquetas, cómo crearlas, eliminarlas y compartirlas, es esencial para un flujo de trabajo eficiente.<br>
 
+| 🏷️ **¿QUÉ ES UN GIT TAG?** |
+|---|
+| Un **tag** o etiqueta es un nombre que podemos asignar a un **commit específico** para identificarlo fácilmente. |
+| Se utiliza principalmente para marcar **versiones importantes** de un proyecto, por ejemplo `v1.0`, `v1.1` o `v2.0`. |
+| De esta forma podemos reconocer rápidamente qué commit corresponde a una determinada versión del proyecto. |
+
 Creación de etiquetas en Git
 
 ```sh
 git tag
 
 ```
+| 🚀 **COMPARTIR UNA ETIQUETA** |
+|---|
+| Para enviar una etiqueta específica a GitHub debemos indicar su nombre: |
+| `git push origin v1.0` |
+| |
+| Para enviar todas las etiquetas locales que todavía no estén en el repositorio remoto podemos utilizar: |
+| `git push origin --tags` |
+
+| 🗑️ **ELIMINAR UNA ETIQUETA** |
+|---|
+| Para eliminar una etiqueta de nuestro repositorio local debemos indicar su nombre: |
+| `git tag -d v1.0` |
+| |
+| Esto elimina la etiqueta **localmente**, pero no necesariamente la elimina de GitHub. |
 
 > Sustituye con un identificador semántico que refleje el estado del repositorio en el momento de la creación. Git admite etiquetas anotadas y ligeras.
 Listado de etiquetas
@@ -222,6 +317,16 @@ git tag -d
 
 >En resumen, las etiquetas en Git son esenciales para asignar versiones y capturar instantáneas importantes en el historial de un proyecto. Aprender a crear, listar, compartir y eliminar etiquetas mejorará tu flujo de trabajo con Git.
 
+| 🧠 **COMANDOS IMPORTANTES** |
+|---|
+| `git tag` → muestra las etiquetas existentes. |
+| `git tag v1.0` → crea una etiqueta ligera. |
+| `git tag -a v1.0 -m "Versión 1.0"` → crea una etiqueta anotada. |
+| `git push origin v1.0` → envía una etiqueta específica a GitHub. |
+| `git push origin --tags` → envía todas las etiquetas. |
+| `git tag -d v1.0` → elimina una etiqueta local. |
+| `git push origin --delete v1.0` → elimina una etiqueta del repositorio remoto. |
+
 # CLASE 06 MIÉRCOLES 16 DE SEPTIEMBRE DEL 2026 - Portafolio 5
 ## Error con los tags
 
@@ -240,4 +345,76 @@ git tag -d NombreDelTag
 Y luego crear nuevamente el tag con el mismo nombre:
 git tag NombreDelTag
 ```
+| ⚠️ **IMPORTANTE** |
+|---|
+| El comando `git tag -d NombreDelTag` elimina el tag **del repositorio local**. |
+| Si ese tag también fue enviado anteriormente a GitHub, eliminarlo localmente no lo elimina automáticamente del repositorio remoto. |
 
+# CLASE 07 MIÉRCOLES 23 DE SEPTIEMBRE DEL 2026 - Portafolio 6
+## Comandos de Git y archivo README.md
+
+> **Actividad**
+
+En GitHub tenemos una gran cantidad de comandos. Hasta ahora hemos visto muchos de ellos en clase.
+
+Se solicitó agregar los comandos que hemos visto en vivo en el archivo **README.md**, dentro del directorio `class-git` o dentro de un directorio con el nombre que elijamos.
+
+Esta actividad se realiza **de manera grupal**.
+
+> **Importante:** Hoy, durante la clase en vivo, se solicitará nuevamente este archivo **README.md** con todas las clases cargadas y organizadas en **formato Markdown**.
+
+# CLASE 08 MIÉRCOLES 30 DE SEPTIEMBRE DEL 2026
+## Manejo de ramas en GitHub**
+
+**Es bueno recordar sobre gitk. Si no te funciona el comando gitk es posible no lo tengas instalado por defecto. Esta es una herramienta muy util a la hora de ver graficamente nuestro trabajo y así entender mejor todo el funcionamiento de ramas, merge y todo el flujo en un formato ordenado.**
+
+**Para instalar gitk debemos ejecutar los siguientes comandos:**
+
+**```sh**
+**sudo apt-get update**
+**sudo apt-get install gitk**
+**```**
+
+**Repasa: ¿Qué es Git?**
+
+**Las ramas nos permiten hacer cambios a nuestros archivos sin modificar la versión principal (main). Puedes trabajar con ramas que nunca envías a GitHub, así como pueden haber ramas importantes en GitHub que nunca usas en el repositorio local. Lo crucial es que aprendas a manejarlas para trabajar profesionalmente.**
+
+| 🌿 **¿QUÉ ES UNA RAMA?** |
+|---|
+| Una **rama (branch)** es una línea de trabajo independiente dentro de un repositorio. |
+| Permite realizar cambios sin modificar directamente la rama principal `main`. |
+| Cuando terminamos nuestro trabajo, los cambios de una rama pueden integrarse con otra mediante un `merge`. |
+
+**Si, estando en otra rama, modificamos los archivos y hacemos commit, tanto el historial(git log) como los archivos serán afectados. La ventaja que tiene usar ramas es que las modificaciones solo afectarán a esa rama en particular. Si luego de “guardar” los archivos(usando commit) nos movemos a otra rama (git checkout otraRama) veremos como las modificaciones de la rama pasada no aparecen en la otraRama.**
+
+| 💡 **IMPORTANTE** |
+|---|
+| Los commits que realizamos mientras estamos en una rama pertenecen a esa rama. |
+| Si cambiamos a otra rama, podremos ver el estado de los archivos correspondiente a esa otra rama. |
+
+**Comandos para manejo de ramas en GitHub**
+
+**Crear una rama:**
+
+**```sh**
+**git branch branchName #Crear una rama**
+
+**git checkout -b branchName #También crea una rama**
+
+**git checkout branchName # Movernos a otra rama**
+
+**git push origin branchName # Publicar una rama local al repositorio remoto**
+**```**
+
+| 📚 **¿QUÉ HACE CADA COMANDO?** |
+|---|
+| `git branch branchName` → crea una nueva rama. |
+| `git checkout -b branchName` → crea una rama y se cambia automáticamente a ella. |
+| `git checkout branchName` → cambia a una rama existente. |
+| `git push origin branchName` → publica la rama local en GitHub. |
+
+**Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git utilizando el comando gitk. Gitk fue el primer visor gráfico que se desarrolló para ver de manera gráfica el historial de un repositorio de Git.**
+
+| 🔄 **FLUJO BÁSICO DE RAMAS** |
+|---|
+| **`main` → crear rama → trabajar → hacer commits → publicar rama → `merge` → `main`** |
