@@ -14,6 +14,13 @@ public class Cliente extends Persona{
         this.vip = false;
     }
 
+    public Cliente(Date fechaRegistro, String nombre, char genero, int edad, String direccion ) {
+        super (nombre, genero, edad, direccion);
+        this.idCliente = ++Cliente.contadorClientes;
+        this.fechaRegistro = fechaRegistro;
+        this.vip = false;
+    }
+
     public int getIdCliente() {
         return this.idCliente;
     }
