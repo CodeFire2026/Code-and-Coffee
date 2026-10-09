@@ -20,4 +20,3 @@
 ![Juan Ignacio Domínguez](https://img.shields.io/badge/☕Juan_Ignacio_Domínguez-6F4E37?style=flat-square&labelColor=3c2415&color=8B5E3C)
 ![Mateo Poblete](https://img.shields.io/badge/☕_Mateo_Poblete-6F4E37?style=flat-square&labelColor=3c2415&color=8B5E3C)
 ![Matías Vergara](https://img.shields.io/badge/☕_Matías_Vergara-6F4E37?style=flat-square&labelColor=3c2415&color=8B5E3C)
->>>>>>> cbccf8fd1e0033752f752a075e46315b15ef8712
