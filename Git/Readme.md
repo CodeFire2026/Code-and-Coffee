@@ -418,3 +418,125 @@ Esta actividad se realiza **de manera grupal**.
 | 🔄 **FLUJO BÁSICO DE RAMAS** |
 |---|
 | **`main` → crear rama → trabajar → hacer commits → publicar rama → `merge` → `main`** |
+
+# CLASE 09 MIÉRCOLES 7 DE OCTUBRE DEL 2026 - Portafolio 9
+
+## Configurar múltiples colaboradores en un repositorio de GitHub
+
+Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub, pero **no pueden crear commits ni ramas**. Esto quiere decir que pueden copiar tu proyecto pero no colaborar con él.
+
+- Si el repositorio es **público**: cualquiera puede verlo y clonarlo, pero necesita ser colaborador para hacer `push`.
+- Si el repositorio es **privado**: es necesario hacer una invitación, de lo contrario no lo van a poder ver.
+
+Existen varias formas de solucionar esto para poder aceptar contribuciones. Una de ellas es añadir a cada persona de nuestro equipo como **colaborador** de nuestro repositorio.
+
+### Cómo agregar colaboradores en GitHub
+
+Solo debemos entrar a la configuración de colaboradores de nuestro proyecto. Se encuentra en:
+
+**Repositorio → Settings → Collaborators**
+
+Ahí debemos añadir el **email** o el **username** de los nuevos colaboradores.
+
+### Corregir el mensaje de un commit
+
+Si como colaborador agregaste erróneamente el mensaje del commit, lo puedes cambiar de la siguiente manera:
+
+git commit --amend
+git pull origin main
+git push --set-upstream origin main
+
+
+| ⚠️ **IMPORTANTE SOBRE `git commit --amend`** |
+| -------------------------------------------- |
+| Este comando sirve para **modificar el último commit** (cambiar el mensaje o agregar archivos que se olvidaron). |
+| Solo se recomienda usarlo si el commit **todavía no fue subido** a GitHub (`push`). |
+| Si ya hiciste `push` y después usás `--amend`, vas a tener que forzar el envío con `git push --force`, lo cual es peligroso en ramas compartidas como `main`. |
+| **Regla de oro:** si el commit ya está en el repositorio remoto, es mejor crear un commit nuevo en lugar de usar `--amend`. |
+___
+
+
+### Comienzo del colaborador
+
+cd Documentos
+mkdir class-git
+ls -al
+
+1. **No debe hacer un `git init`**. Debe buscar el repositorio en el cual está invitado a participar.
+2. Clonar desde **HTTPS** (copiar la URL), porque no se arranca el proyecto desde cero, se está uniendo otro colaborador.
+3. En Git Bash ponemos el siguiente comando:
+
+git clone url-copiada-github
+
+4. No pide usuario ni contraseña si el repositorio es público.
+
+code .
+
+También se puede usar `vim`:
+
+vim historia.txt
+
+**En Ubuntu:**
+- Ctrl + X
+- S (para Sí)
+- Enter
+
+**En Git Bash (Windows):**
+- Esc
+- :wq!
+
+Luego:
+
+git status
+git commit -am "Mi primer commit, estoy muy emocionado!!!"
+git pull origin main
+git fetch
+git branch
+git log
+git log --graph
+git push origin main
+
+---
+>| 🔄 **BUENA PRÁCTICA** |
+>|-----------------------|
+>| Antes de hacer `push`, siempre ejecutá `git pull` para traer los últimos cambios y evitar conflictos. |
+---
+
+5. Nos trae un **denegado**. ¿Por qué? Porque el dueño del repositorio todavía no le dio acceso.
+
+6. Ir a **Settings → Collaborators** del repositorio y agregar el correo o nombre de usuario del colaborador.
+
+7. GitHub envía una notificación al usuario invitado.
+
+8. El colaborador debe **aceptar la invitación**. Una vez hecho eso ya tendrá acceso para hacer `push`.
+
+git pull origin main
+git push origin main
+
+9. El dueño del repositorio no ve los cambios. ¿Qué hacer?
+
+git pull origin main
+git fetch
+git log --stat
+
+10. A partir de ahora el dueño del repositorio y el colaborador deberán repartir el trabajo. Esto se hace con distintas ramas:
+- El dueño trabaja desde la rama `header`
+- El colaborador trabaja desde la rama `footer`
+- Al final se hace un `merge` para terminar el proyecto.
+
+# CLASE 10 MIÉRCOLES 14 DE OCTUBRE DEL 2026 - Portafolio 10
+
+## Flujo de trabajo profesional
+### Haciendo merge de ramas de desarrollo a main
+
+Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un **flujo de trabajo profesional**, que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores.
+
+Una buena práctica de flujo de trabajo sería la siguiente:
+
+1. Crear ramas
+2. Asignar una rama a cada programador
+3. El programador baja el repositorio con `git pull origin main`
+4. El programador cambia de rama
+5. El programador trabaja en esa rama y hace commits
+6. El programador sube su trabajo con `git push origin nombre_rama`
+7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios
