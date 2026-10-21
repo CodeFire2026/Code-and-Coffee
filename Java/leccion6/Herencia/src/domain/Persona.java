@@ -9,6 +9,7 @@ public class Persona {
     
     //Constructor vació: este es para crear objetos sin necesidad de inicializar
     //los atributos de la clase
+    
     public Persona (){ //Constructor 1
         
     }
