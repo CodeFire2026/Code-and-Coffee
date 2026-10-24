@@ -540,3 +540,39 @@ Una buena práctica de flujo de trabajo sería la siguiente:
 5. El programador trabaja en esa rama y hace commits
 6. El programador sube su trabajo con `git push origin nombre_rama`
 7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios
+
+
+# CLASE 11 — MIÉRCOLES 21 DE OCTUBRE DEL 2026
+
+## Flujo de trabajo profesional → Archivos binarios
+
+### 📁 ¿Por qué los archivos binarios representan un problema?
+
+Las imágenes, al cargarlas en el repositorio, representan un problema porque suelen ser archivos pesados. Si las subimos al repositorio, Git debe conservar sus versiones en el historial, lo que puede aumentar considerablemente el tamaño del proyecto.
+
+Las imágenes son archivos binarios para GitHub. **Mientras más archivos binarios carguemos, más pesado será el repositorio**, algo que no forma parte de las buenas prácticas de trabajo.
+
+> 💡 **IMPORTANTE:** Es recomendable evitar subir archivos pesados innecesarios para mantener el repositorio liviano y facilitar su mantenimiento.
+
+---
+
+### ⚠️ Límite de tamaño de los archivos
+
+Otra cosa muy importante que debemos tener en cuenta es que GitHub establece un límite de tamaño para los archivos que podemos subir.
+
+**El límite para un archivo individual en un repositorio normal de GitHub es de 100 MB.** Si agregamos un archivo binario que supera ese tamaño, GitHub rechazará la carga.
+
+Además, si el archivo ya fue agregado a un commit, eliminarlo de la carpeta del proyecto no significa que desaparezca del historial de Git. Por eso, puede seguir generando problemas al intentar subir los cambios.
+
+> ⚠️ **ATENCIÓN:** Si un archivo pesado ya forma parte del historial de Git, puede ser necesario quitarlo también del historial para solucionar el problema.
+
+---
+
+### ✅ Buenas prácticas
+
+- Evitar subir imágenes y archivos binarios innecesarios.
+- Mantener el repositorio lo más liviano posible.
+- Tener en cuenta el límite de 100 MB por archivo individual.
+- Recordar que los archivos eliminados pueden seguir presentes en el historial de Git.
+
+---
