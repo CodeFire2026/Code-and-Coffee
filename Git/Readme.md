@@ -576,3 +576,8 @@ Además, si el archivo ya fue agregado a un commit, eliminarlo de la carpeta del
 - Recordar que los archivos eliminados pueden seguir presentes en el historial de Git.
 
 ---
+## CLASE 12 MIÉRCOLES 28 DE OCTUBRE DEL 2026
+
+> **Flujo de trabajo profesional -> Ya hemos llegado al nivel más alto de GitHub**
+
+> **Es momento de presentar el README.md con todos los comandos y prácticas en cada clase, ya terminando este semestre, es hoy que debe estar completo este archivo en el lenguaje de Markdown, lo voy a pedir en la clase en vivo por zoom. Los espero.**
