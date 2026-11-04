@@ -1,5 +1,4 @@
 from Empleado import Empleado
-from Empleado import Empleado
 
 
 class Gerente(Empleado):
