@@ -1,6 +1,7 @@
 # List = you can use any type of data (string, numbers, etc.)
 # Colecciones en Python
 # Las listaas tambien se conocen en otros lenguajes como arreglos o vectores
+from idlelib import delegator
 
 names = ["Santiago","Mateo","Valentín","Martina"]
 print(names)
@@ -283,11 +284,48 @@ argentinaNationalTeam = {
 for key, value in argentinaNationalTeam.items():
     print(key, value)
 
-print("The amount of players we´ve got uploaded into the dictionary is: ", end="")
+print("The amount of players we´ve got uploaded into the dictionary is: ", end=" ")
 print(len(argentinaNationalTeam))
 
+# Piles using lists
+pile = [1, 2, 3]
 
+# Aggregating elements to the pile from the end
+pile.append(4)
+pile.append(5)
+print(pile)
 
+# We delete elements form the end
+deletedElement = pile.pop() #Deletes the last element and saves it in the variable
+print(f"We delete the element: {deletedElement}")
+print(f"Now the pile looks like this: {pile}")
 
+# Lines with lists
+# fifo type Data structure (first input / first output)
+line = ["Ariel", "Osvaldo", "Liliana", "Pilar"]
 
+# We aggregate elements at the end of the line
+line.append("Natalia")
+line.append("José")
+print(line)
 
+# We delete elements from the line
+leaves = line.pop(0)
+print(f"Served client: {leaves}")
+print(line)
+
+leaves = line.pop(0)
+print(f"Served client: {leaves}")
+print(line)
+
+leaves = line.pop(0)
+print(f"Served client: {leaves}")
+print(line)
+
+leaves = line.pop(0)
+print(f"Served client: {leaves}")
+print(line)
+
+leaves = line.pop(0)
+print(f"Served client: {leaves}")
+print(line)

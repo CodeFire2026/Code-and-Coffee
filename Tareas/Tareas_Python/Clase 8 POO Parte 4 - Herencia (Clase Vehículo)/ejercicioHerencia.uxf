@@ -1,0 +1,21 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>300</x><y>80</y><w>210</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Vehículo&gt;&gt;
+--
+-color:str
+-ruedas: int
+--
+_init_(color,ruedas,velocidad
+_str_()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>320</y><w>210</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Auto&gt;&gt;
+--
+-velocidad: int
+--
+_init_(color,ruedas,velocidad)
+_str_()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>320</y><w>210</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Bicicleta&gt;&gt;
+--
+-tipo:str
+--
+_init_(color,ruedas,tipo)
+_str_()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>240</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>230</y><w>300</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;extends&gt;&gt;</panel_attributes><additional_attributes>280;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>230</y><w>290</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;extends&gt;&gt;</panel_attributes><additional_attributes>10;20;270;20</additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>240</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>170</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element></diagram>
